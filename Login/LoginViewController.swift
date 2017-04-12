@@ -23,12 +23,68 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = Constants.backgroundColor
         
+        let label = UILabel(frame: CGRect(x: 45,
+                                   y: UIScreen.main.bounds.minY + 50,
+                                   width: UIScreen.main.bounds.width - UIScreen.main.bounds.width / 5,
+                                   height: 200))
+        label.textColor = UIColor.white
+        label.text = "Login View Controller"
+        label.textAlignment = .center
+        label.font = label.font.withSize(30)
+        let loginView = UIView(frame: CGRect(x: UIScreen.main.bounds.midX,
+                                             y: UIScreen.main.bounds.midY,
+                                             width: UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 10),
+                                             height: 200))
+        loginView.backgroundColor = UIColor.white
+        loginView.center = view.center
+        
+        
+        view.addSubview(loginView)
+        view.addSubview(label)
+        
+        let loginButton = UIButton(frame: CGRect(x: loginView.bounds.midX / 2,
+                                                 y: loginView.bounds.height - 60,
+                                                 width: loginView.bounds.width / 2,
+                                                 height: 50))
+        loginButton.backgroundColor = Constants.backgroundColor
+        
+        loginButton.setTitle("Login", for: .normal)
+        loginButton.layer.cornerRadius = 5
+        loginButton.layer.borderWidth = 1
+        
+        
+        
+        let loginTF = UITextField(frame: CGRect(x: loginView.bounds.minX,
+                                                y: loginView.bounds.minY + 10,
+                                                width: loginView.bounds.width,
+                                                height: loginView.bounds.height / 4))
+        loginTF.backgroundColor = UIColor.white
+        loginTF.text = "berkeley.edu account"
+        loginTF.textColor = UIColor.lightGray
+        
+        
+        let passwordTF = UITextField(frame: CGRect(x: loginView.bounds.minX,
+                                                   y: loginView.bounds.minY + loginView.bounds.height / 4 + 20,
+                                                   width: loginView.bounds.width,
+                                                   height: loginView.bounds.height / 4))
+        passwordTF.backgroundColor = UIColor.white
+        passwordTF.text = "password"
+        passwordTF.textColor = UIColor.lightGray
+        
+        loginView.addSubview(loginTF)
+        loginView.addSubview(passwordTF)
+        loginView.addSubview(loginButton)
+        
+        
+        
         // TODO: Add your views either as subviews of `view` or subviews of each other using `addSubview`
         
         // TODO: layout your views using frames or AutoLayout
     }
     
     // TODO: create an IBAction for your login button
+    
+    
     
     
     
